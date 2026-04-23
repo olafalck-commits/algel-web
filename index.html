@@ -487,19 +487,86 @@
   .footer-contact p { font-size: 0.82rem; color: rgba(255,255,255,0.5); line-height: 1.6; }
   .footer-contact a { color: var(--teal); text-decoration: none; }
 
-  /* RESPONSIVE */
+  /* TRACTION GRID */
+  .traction-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  /* RESPONSIVE — tablet */
   @media (max-width: 900px) {
     nav { padding: 1rem 1.5rem; }
     .nav-links { display: none; }
     section { padding: 4rem 1.5rem; }
-    .hero { grid-template-columns: 1fr; padding: 6rem 1.5rem 3rem; min-height: auto; gap: 3rem; }
+    .hero { grid-template-columns: 1fr; padding: 6rem 1.5rem 3rem; min-height: auto; gap: 2rem; }
     .hero::before, .hero::after { display: none; }
-    .opp-grid, .market-primary, .team-grid, .steps, .risk-grid, .cta-grid { grid-template-columns: 1fr; }
+    .opp-grid, .market-primary, .team-grid, .steps, .risk-grid, .cta-grid, .traction-grid { grid-template-columns: 1fr; }
     .market-secondary { grid-template-columns: 1fr 1fr; }
     .hero-stats { grid-template-columns: 1fr 1fr; }
     footer { flex-direction: column; align-items: flex-start; }
     .footer-contacts { flex-direction: column; gap: 1.5rem; }
   }
+
+  /* RESPONSIVE — mobile */
+  @media (max-width: 540px) {
+    nav { padding: 1rem; }
+    section { padding: 3rem 1.25rem; }
+
+    /* Hero */
+    .hero { padding: 5rem 1.25rem 2.5rem; gap: 2rem; }
+    .hero h1 { font-size: 2rem; }
+    .hero-sub { font-size: 0.95rem; }
+    .hero-badge { font-size: 0.7rem; padding: 5px 12px; margin-bottom: 1.25rem; }
+    .hero-ctas { flex-direction: column; gap: 0.75rem; }
+    .btn-primary, .btn-secondary { width: 100%; justify-content: center; padding: 0.9rem 1.25rem; }
+    .hero-stats { grid-template-columns: 1fr 1fr; gap: 1px; }
+    .stat-box { padding: 1.25rem 1rem; }
+    .stat-num { font-size: 1.8rem; }
+    .pilot-note { font-size: 0.8rem; }
+
+    /* Section typography */
+    .section-title { font-size: 1.6rem; }
+    .section-lead { font-size: 0.95rem; margin-bottom: 2rem; }
+
+    /* Opportunity */
+    .opp-card { padding: 1.25rem; }
+    .opp-card-num { font-size: 1.5rem; }
+
+    /* How */
+    .steps { gap: 1px; }
+    .step { padding: 1.5rem 1.25rem; }
+    .step-num { font-size: 2rem; margin-bottom: 0.75rem; }
+
+    /* Markets */
+    .market-card { padding: 1.5rem; }
+    .market-secondary { grid-template-columns: 1fr; }
+    .market-mini { padding: 1rem; }
+
+    /* Traction */
+    .traction-grid { gap: 2rem; }
+    .timeline { padding-left: 1.75rem; }
+
+    /* Risk */
+    .risk-grid { grid-template-columns: 1fr; }
+    .risk-card { padding: 1.25rem; }
+
+    /* Team */
+    .team-grid { grid-template-columns: 1fr; gap: 1rem; }
+    .team-card { padding: 1.25rem; gap: 1rem; flex-direction: column; }
+    .team-avatar { width: 44px; height: 44px; font-size: 0.95rem; }
+
+    /* Investor CTAs */
+    .cta-grid { grid-template-columns: 1fr; gap: 1rem; }
+    .cta-card { padding: 1.5rem; }
+
+    /* Footer */
+    footer { padding: 2.5rem 1.25rem; gap: 1.5rem; }
+    .footer-logo { font-size: 1.2rem; }
+    .footer-contacts { gap: 1.25rem; }
+  }
+
 </style>
 </head>
 <body>
@@ -649,7 +716,7 @@
 <!-- TRACTION -->
 <section class="traction" id="traction">
   <div class="section-label">Milepæler</div>
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;">
+  <div class="traction-grid">
     <div>
       <h2 class="section-title">Fra idé til<br><em>industriell skala.</em></h2>
       <p class="section-lead">Validert pilot, aktivt Proof of Concept støttet av Samnanger Kommune, og en klar vei mot kommersiell produksjon.</p>
